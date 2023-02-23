@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - BackGround
+  - Tree
   layers:
   - Default
   - TransparentFX
@@ -12,8 +13,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Trees
+  - Stones
   - 
   - 
   - 
@@ -42,12 +43,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: grass
-    uniqueID: 395652801
+  - name: Env
+    uniqueID: 4124077061
     locked: 0
-  - name: stones
-    uniqueID: 1359527881
+  - name: Trees
+    uniqueID: 848053313
     locked: 0
-  - name: otherstones
-    uniqueID: 442783789
+  - name: Env2
+    uniqueID: 1544707073
+    locked: 0
+  - name: Buildings
+    uniqueID: 1515112845
+    locked: 0
+  - name: Soldiers
+    uniqueID: 2850684135
     locked: 0
