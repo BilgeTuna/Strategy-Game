@@ -43,6 +43,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Stones
+    uniqueID: 1560169697
+    locked: 0
   - name: Env
     uniqueID: 4124077061
     locked: 0
