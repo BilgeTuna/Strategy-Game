@@ -11,6 +11,7 @@ public class SoldierMovement : MonoBehaviour
     public Animator anim;
     public float rotationSpeed = 5f;
     public bool turnRight = true;
+    public bool isSelected = false;
 
     private Seeker seeker;
     private Path path;
@@ -21,6 +22,12 @@ public class SoldierMovement : MonoBehaviour
     private void Start()
     {
         seeker = GetComponent<Seeker>();
+    }
+
+    private void OnMouseDown()
+    {
+        isSelected = true;
+        Debug.Log("dokundu");
     }
 
     private void Update()
