@@ -4,34 +4,21 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InfiniteScroll : MonoBehaviour, IBeginDragHandler, IDragHandler, IScrollHandler
+public class InfiniteScroll : MonoBehaviour
 {
+    [SerializeField] private Transform scrollViewContent;
+    [SerializeField] GameObject prefab;
+    [SerializeField] List<Sprite> builds;
 
-    void Start()
+    private void Start()
     {
-
-    }
-
-    public void OnBeginDrag(PointerEventData eventData)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void OnDrag(PointerEventData eventData)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void OnScroll(PointerEventData eventData)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        foreach (Sprite build in builds)
+        {
+            GameObject newBuild = Instantiate(prefab, scrollViewContent);
+            if (newBuild.TryGetComponent<ScrollViewItem>(out ScrollViewItem item))
+            {
+                item.ChangeImage(build);
+            }
+        }
     }
 }
