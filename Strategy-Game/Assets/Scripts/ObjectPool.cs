@@ -2,34 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectPool
+public class ObjectPool : MonoBehaviour 
 {
-    private GameObject[] objects;
-    private int maxSize;
-    private int currentIndex = 0;
+    private Queue<GameObject> pooledObjects;
+    [SerializeField] private GameObject objectPrefab;
+    [SerializeField] private int poolSize;
 
-    public ObjectPool(GameObject prefab, int max, int size)
+    private void Awake()
     {
-        objects = new GameObject[size];
-        maxSize = max;
-        for (int i = 0; i < size; i++)
+        pooledObjects= new Queue<GameObject>();
+        for (int i = 0; i < poolSize; i++)
         {
-            GameObject obj = GameObject.Instantiate(prefab);
-            obj.SetActive(false);
-            objects[i] = obj;
+            GameObject gameObject = Instantiate(objectPrefab);
+            pooledObjects.Enqueue(gameObject);
         }
     }
 
-    public GameObject Spawn()
+    public GameObject GetPooledObject()
     {
-        GameObject obj = objects[currentIndex];
-        obj.SetActive(true);
-        currentIndex = (currentIndex + 1) % maxSize;
-        return obj;
-    }
-
-    public void Deactivate(GameObject obj)
-    {
-        obj.SetActive(false);
+        GameObject gameObject = pooledObjects.Dequeue();
+        pooledObjects.Enqueue(gameObject);
+        return gameObject;
     }
 }
