@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 4979168997810467398}
   - component: {fileID: 4170242833679983592}
   - component: {fileID: 4044387674957580831}
-  - component: {fileID: 1786855660242310906}
-  - component: {fileID: 3067925121367468885}
+  - component: {fileID: 1596978452313661272}
   m_Layer: 5
   m_Name: Img-Barracks
   m_TagString: Untagged
@@ -92,7 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 6597689764316736285, guid: 31e2c4d9087958a4fa1b72d9f85090f1, type: 3}
---- !u!114 &1786855660242310906
+--- !u!114 &1596978452313661272
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,7 +137,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4044387674957580831}
         m_TargetAssemblyTypeName: ImageToSprite, Assembly-CSharp
-        m_MethodName: Click
+        m_MethodName: Button
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -148,16 +147,3 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3067925121367468885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5212378214434801584}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates: []

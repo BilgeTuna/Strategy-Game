@@ -195,8 +195,8 @@ TextureImporter:
       name: stone3
       rect:
         serializedVersion: 2
-        x: 157
-        y: 22
+        x: 158
+        y: 21
         width: 126
         height: 107
       alignment: 9
@@ -254,6 +254,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: RedArea
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 21
+        width: 126
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bdd5b88532283643acc661fc9063d16
+      internalID: 2146179475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -267,6 +288,7 @@ TextureImporter:
     nameFileIdTable:
       icewater: -1739426743
       grass: -1472237697
+      RedArea: 2146179475
       grass2: -1503069122
       stone2: -2107171177
       stone1: 405745032

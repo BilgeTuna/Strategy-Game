@@ -1,25 +1,47 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-public class DragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
+public class DragHandler : MonoBehaviour
 {
-    private Vector2 startPosition;
-    private Transform transform;
+    private Vector2 screenPoint;
+    private Vector2 offset;
+    private GameObject soldier;
+    private Animator anim;
 
-    private void Start()
+    private void Awake()
     {
-        transform = GetComponent<Transform>();
+        soldier = GameObject.FindWithTag("Soldier");
+        anim = soldier.GetComponent<Animator>();
     }
 
-    public void OnDrag(PointerEventData eventData)
+    void OnMouseDown()
     {
-        transform.position += (Vector3)eventData.delta;
+        soldier.GetComponent<SoldierMovement>().enabled= false;
+        anim.SetBool("isWalinkg", false);
+        screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+        offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
     }
 
-    public void OnEndDrag(PointerEventData eventData)
+    void OnMouseDrag()
     {
-        // Do something when dragging ends
+        //soldier.GetComponent<SoldierMovement>().enabled = true;
+        Vector2 cursorPoint = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        Vector2 cursorPosition = (Vector2)Camera.main.ScreenToWorldPoint(cursorPoint) + offset;
+        transform.position = cursorPosition;
+    }
+
+    private void OnMouseUp()
+    {
+        anim.SetBool("isWalinkg", true);
+        soldier.GetComponent<SoldierMovement>().enabled = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Tree")
+        {
+            Debug.Log("OLDU DA BÝTTÝ MAÞALLAH!");
+        }
     }
 }

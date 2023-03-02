@@ -1,35 +1,31 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UI;
-
 
 public class ImageToSprite : MonoBehaviour
 {
-    private float mouserPosX;
-    private float startPosY;
-    private bool isBeingHeld = false;
     public GameObject prefab;
+    private GameObject soldier;
+    private Animator anim;
 
-    public void Click()
+
+    private void Awake()
     {
-        Vector3 mousePos;
-        mousePos = Input.mousePosition;
-        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-        Instantiate(prefab, mousePos, Quaternion.identity);
-        isBeingHeld= true;
+        soldier = GameObject.FindWithTag("Soldier");
+        anim = soldier.GetComponent<Animator>();
+    }
+    public void Button()
+    {
+        soldier.GetComponent<SoldierMovement>().GetComponent<SoldierMovement>().enabled = false;
+        anim.SetBool("isWalinkg", false);
+        Vector3 prefabPos = new Vector3(0, 0, 0);
+        Instantiate(prefab, prefabPos, Quaternion.identity);
+        StartCoroutine(AfterClick());
     }
 
-    private void Update()
+    private IEnumerator AfterClick()
     {
-        if (isBeingHeld == true)
-        {
-            Vector3 mousePos;
-            mousePos = Input.mousePosition;
-            mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-
-            prefab.transform.localPosition = new Vector3(mousePos.x, mousePos.y, 0f);
-        }
+        yield return new WaitForSeconds(1f);
     }
 }

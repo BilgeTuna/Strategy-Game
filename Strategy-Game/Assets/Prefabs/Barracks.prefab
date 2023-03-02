@@ -12,10 +12,11 @@ GameObject:
   - component: {fileID: 6597689764316736286}
   - component: {fileID: 6597689764316736289}
   - component: {fileID: 6597689764316736288}
-  - component: {fileID: 5857217094873340053}
-  m_Layer: 9
+  - component: {fileID: 399504972803235673}
+  - component: {fileID: -6928370044772050266}
+  m_Layer: 0
   m_Name: Barracks
-  m_TagString: Untagged
+  m_TagString: Build
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6597689764316736285}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.1116023, y: 35.464333, z: 0}
+  m_LocalPosition: {x: -233.41426, y: 122.05191, z: 0}
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -119,15 +120,36 @@ CapsuleCollider2D:
   m_Offset: {x: 0.038492188, y: 0.39618367}
   m_Size: {x: 0.97495085, y: 0.311222}
   m_Direction: 1
---- !u!114 &5857217094873340053
+--- !u!114 &399504972803235673
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6597689764316736285}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a41599f8c77b6747b19080a334a9b87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &-6928370044772050266
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6597689764316736285}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7

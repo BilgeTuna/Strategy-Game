@@ -7,6 +7,8 @@ TagManager:
   - BackGround
   - Tree
   - Ground
+  - Soldier
+  - Build
   layers:
   - Default
   - TransparentFX
@@ -18,7 +20,7 @@ TagManager:
   - Stones
   - Env
   - Builds
-  - 
+  - UI2
   - 
   - 
   - 
