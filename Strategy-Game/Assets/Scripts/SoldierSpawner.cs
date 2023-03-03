@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoldierSpawner : MonoBehaviour
 {
-    public GameObject prefab;
+    public GameObject prefabSoldier;
     public float[] spawnTimes;
     private int nextSpawnIndex = 0;
     private float timeElapsed = 0;
@@ -15,7 +15,7 @@ public class SoldierSpawner : MonoBehaviour
 
         if (nextSpawnIndex < spawnTimes.Length && timeElapsed > spawnTimes[nextSpawnIndex])
         {
-            Instantiate(prefab, transform.position, transform.rotation);
+            Instantiate(prefabSoldier, transform.position, transform.rotation);
             nextSpawnIndex++;
         }
     }

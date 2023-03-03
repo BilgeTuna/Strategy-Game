@@ -7,32 +7,25 @@ using UnityEngine.EventSystems;
 
 public class SoldierMovement : MonoBehaviour
 {
-    public CinemachineVirtualCamera virtualCamera;
     public Animator anim;
     public float rotationSpeed = 5f;
     public bool turnRight = true;
-    public bool isSelected = false;
 
     private Seeker seeker;
     private Path path;
     private int currentWaypoint = 0;
     private bool isMoving = false;
     private bool movingRight = true;
+    private GameObject selectedGameObject;
 
     private void Start()
     {
         seeker = GetComponent<Seeker>();
     }
 
-    private void OnMouseDown()
-    {
-        isSelected = true;
-        Debug.Log("dokundu");
-    }
-
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             seeker.StartPath(transform.position, mousePosition, OnPathComplete);

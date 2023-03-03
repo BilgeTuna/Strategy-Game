@@ -12,6 +12,7 @@ TagManager:
   - Env
   - RedArea
   - Areas
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -52,18 +53,21 @@ TagManager:
   - name: Stones
     uniqueID: 1560169697
     locked: 0
+  - name: RedArea
+    uniqueID: 1544707073
+    locked: 0
   - name: Env
     uniqueID: 4124077061
     locked: 0
   - name: Trees
     uniqueID: 848053313
     locked: 0
-  - name: Env2
-    uniqueID: 1544707073
-    locked: 0
   - name: Buildings
     uniqueID: 1515112845
     locked: 0
   - name: Soldiers
     uniqueID: 2850684135
+    locked: 0
+  - name: UI
+    uniqueID: 1843126789
     locked: 0
