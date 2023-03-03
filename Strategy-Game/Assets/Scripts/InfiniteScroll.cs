@@ -70,13 +70,10 @@ public class InfiniteScroll : MonoBehaviour
         }
         else if (content.GetChild(0).GetComponent<RectTransform>().anchoredPosition.y >= 0)
         {
-            // Get the last visible child
             RectTransform lastVisibleChild = content.GetChild(numVisibleChildren - 1).GetComponent<RectTransform>();
 
-            // Move it to the beginning of the content
             lastVisibleChild.anchoredPosition -= new Vector2(0f, content.sizeDelta.y);
 
-            // Set it as the first child
             lastVisibleChild.SetAsFirstSibling();
         }
     }

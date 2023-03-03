@@ -50,7 +50,6 @@ public class SoldierMovement : MonoBehaviour
             Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - (Vector2)transform.position).normalized;
             transform.position += (Vector3)direction * Time.deltaTime * 5f;
 
-            // Check for left/right movement and log a message
             if (direction.x > 0 && !movingRight)
             {
                 transform.GetComponent<SpriteRenderer>().flipX = false;
