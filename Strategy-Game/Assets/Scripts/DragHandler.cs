@@ -39,19 +39,23 @@ public class DragHandler : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Areas")
+        if (collision.gameObject.tag == "Areas" || collision.gameObject.tag == "Tree")
         {
-            Debug.Log("1453");
             foreach (Transform child in collision.gameObject.transform)
             {
                 child.gameObject.SetActive(true);
             }
         }
+
+        if (collision.gameObject.tag == "Build")
+        {
+
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Areas")
+        if (collision.gameObject.tag == "Areas" || collision.gameObject.tag == "Tree")
         {
             foreach (Transform child in collision.gameObject.transform)
             {
