@@ -9,6 +9,9 @@ TagManager:
   - Ground
   - Soldier
   - Build
+  - Env
+  - RedArea
+  - Areas
   layers:
   - Default
   - TransparentFX

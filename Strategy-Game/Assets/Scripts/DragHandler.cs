@@ -39,9 +39,24 @@ public class DragHandler : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Tree")
+        if (collision.gameObject.tag == "Areas")
         {
-            Debug.Log("OLDU DA BÝTTÝ MAÞALLAH!");
+            Debug.Log("1453");
+            foreach (Transform child in collision.gameObject.transform)
+            {
+                child.gameObject.SetActive(true);
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Areas")
+        {
+            foreach (Transform child in collision.gameObject.transform)
+            {
+                child.gameObject.SetActive(false);
+            }
         }
     }
 }
