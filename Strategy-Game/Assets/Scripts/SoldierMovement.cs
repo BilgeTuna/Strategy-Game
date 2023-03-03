@@ -25,7 +25,7 @@ public class SoldierMovement : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(0))
         {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             seeker.StartPath(transform.position, mousePosition, OnPathComplete);

@@ -25,7 +25,7 @@ public class Attack : MonoBehaviour
     {
         fillImage.fillAmount = currentHealth / maxHealth; 
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(0))
         {
             Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);

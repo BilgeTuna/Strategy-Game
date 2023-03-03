@@ -13,6 +13,7 @@ TagManager:
   - RedArea
   - Areas
   - Bullet
+  - UIInfo
   layers:
   - Default
   - TransparentFX

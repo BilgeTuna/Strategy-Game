@@ -5,14 +5,26 @@ using UnityEngine.UI;
 
 public class DragHandler : MonoBehaviour
 {
+    public Image fillImage;
+    public float maxHealth = 100f;
+    //100-50
+    public float currentHealth = 100f;
+    public float damage = 10f;
+    //
     private Vector2 screenPoint;
     private Vector2 offset;
 
-    public Pane
-    public GameObject panel1;
-    public GameObject panel2;
-    public GameObject panel3;
-    public GameObject panelText;
+    private GameObject panel;
+
+    private void Start()
+    {
+        fillImage.fillAmount = 1f;
+    }
+
+    private void Update()
+    {
+        fillImage.fillAmount = currentHealth / maxHealth;
+    }
 
     void OnMouseDown()
     {
@@ -25,24 +37,17 @@ public class DragHandler : MonoBehaviour
         Vector2 cursorPoint = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         Vector2 cursorPosition = (Vector2)Camera.main.ScreenToWorldPoint(cursorPoint) + offset;
         transform.position = cursorPosition;
+        
     }
 
-    public void ButtonEffect()
+    public void ReduceHealth(float damageAmount)
     {
-        panelText.SetActive(true);
-        panel1.SetActive(true);
-    }
+        currentHealth -= damageAmount;
 
-    public void ButtonEffect2()
-    {
-        panelText.SetActive(true);
-        panel2.SetActive(true);
-    }
-
-    public void ButtonEffect3()
-    {
-        panelText.SetActive(true);
-        panel3.SetActive(true);
+        if (currentHealth < 0f)
+        {
+            currentHealth = 0f;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -52,6 +57,15 @@ public class DragHandler : MonoBehaviour
             foreach (Transform child in collision.gameObject.transform)
             {
                 child.gameObject.SetActive(true);
+            }
+        }
+
+        if (collision.gameObject.tag == "Bullet")
+        {
+            ReduceHealth(damage);
+            if (currentHealth == 0f)
+            {
+                Destroy(gameObject);
             }
         }
     }
